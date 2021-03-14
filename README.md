@@ -67,5 +67,11 @@ Below is a table that shows the various combinations of parameters and expected 
      <td>optional</td>
      <td>If numberOfTries is set to a non-zero positive number, then the url will be tried that many times (returning `true` on the first successful attempt or `false` if the resource cannot be found after that number of tries. If the `numberOfTries` is set to `-1` the API will attempt to connect to the website repeatedly for 10 seconds until either a) it is found successfully, in which case it will return `true` or b) 10 seconds has passed with only failed attempts in which case it will retuurn `false`.</td>
     </tr>
+    <tr>
+     <td>statusCode</td>
+      <td>integer</td>
+     <td>optional</td>
+     <td>This is the status code that is expected based on a GET request to the url. If a GET request to the url returns this status code, the checkWebsiteStatus returns true</td>     
+    </tr>
   </tbody>
 </table> 
