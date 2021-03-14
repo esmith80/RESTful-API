@@ -7,29 +7,7 @@ The UpTimeAPI is a service that can monitor website metrics such as uptime.
 - JavaScript (advanced)
 
 ### What does this API depend on?
-Every effort is made to ensure that the dependencies of this API are valid. We have avoided the use of dependencies where possible, however the strength of the Node ecosystem is in this interwoven fabric of open source code. That said, if something happens that's beyond our control, sorry... 
-
-
-### Features
-
-### Use Cases
->**Use Case A**: Check if a website is live.
-```javascript
-checkWebsiteStatus('https://www.example.com');
-// returns true only if GET request to example.com returns status code 200
-```
-
->**Use Case B**: Check if website is vulnerable to denial of service DoS attack
-```javascript
-checkWebsiteStatus('https://www.example.com/API', 100);
-// returns true if status code 200 is returned 100 times in a row
-```
-
->**Use Case C**: Check if a website's access rights/permissions are working
-```javascript
-checkWebsiteStatus('https://www.example.com/secure_login_page', 1, 403);
-// returns true if request to url returns 403 (permission denied) status code
-```
+Every effort is made to ensure that the dependencies of this API are valid. We have avoided the use of dependencies where possible and our team of developers continually monitors the status of dependent packages. That said, if something happens that's beyond our control, sorry... 
 
 ### How to use this API
 
@@ -74,4 +52,23 @@ Below is a table that shows the various combinations of parameters and expected 
      <td>This is the status code that is expected based on a GET request to the url. If a GET request to the url returns this status code, the checkWebsiteStatus returns true</td>     
     </tr>
   </tbody>
-</table> 
+</table>
+
+### Use Cases
+>**Use Case A**: Check if a website is live.
+```javascript
+checkWebsiteStatus('https://www.example.com');
+// returns true only if GET request to example.com returns status code 200
+```
+
+>**Use Case B**: Check if website is vulnerable to denial of service DoS attack
+```javascript
+checkWebsiteStatus('https://www.example.com/API', 100);
+// returns true if status code 200 is returned 100 times in a row
+```
+
+>**Use Case C**: Check if a website's access rights/permissions are working
+```javascript
+checkWebsiteStatus('https://www.example.com/secure_login_page', 1, 403);
+// returns true if request to url returns 403 (permission denied) status code
+```
