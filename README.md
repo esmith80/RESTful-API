@@ -33,23 +33,20 @@ checkWebsiteStatus('https://www.example.com/secure_login_page', 1, 403);
 
 ### How to use this API
 
-### Summary
 ```javascript 
+checkWebsiteStatus(url, [numberOfTries], [statusCode]);
 // url (required): string, 
 // numberOfTries (optional): integer
+// statusCode (optional): integer
 // Returns: Boolean
-
-checkWebsiteStatus(url, [numberOfTries], [statusCode])
 ```
-`checkWebsiteStatus` returns a boolean based on the status code returned after a `GET` request to the `url`. The typical use case is to check if a website is up. Therefore, the simplest use is to pass only the `url` to try one request where the expected status code to return is 200. is made to check for the website, however it may be checked more than once if `numberOfTries` is passed. The expected status code is 200 by default, however if `statusCode` is supplied, the status code will be the expected result.
-
-However, a site may be checked more than once. 
+`checkWebsiteStatus` returns a boolean based on the status code returned after a `GET` request to the `url`. The typical use case is to check if a website is up. Therefore, the simplest use is to pass a `url` to try one request where the expected `statusCode` to return is 200. A website may be checked more than once if `numberOfTries` is passed. The expected `statusCode` is 200 by default, however if `statusCode` is supplied, it will be the expected status code of the GET request.
 
 Below is a table that shows the various combinations of parameters and expected outcomes:
 
 <table>
   <theader>
-    <tr><th>checkWebsiteAlive usage</th></tr>
+    <tr><td>checkWebsiteAlive usage</td></tr>
     <tr>
       <td>Parameter</td>
       <td>Type</td>
