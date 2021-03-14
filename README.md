@@ -66,14 +66,14 @@ checkWebsiteStatus('https://www.example.com');
 // returns true only if GET request to example.com returns status code 200
 ```
 
->**Use Case B**: Check if website is vulnerable to denial of service DoS attack
-```javascript
-checkWebsiteStatus('https://www.example.com/API', 1000);
-// returns true if status code 200 is returned 100 times in a row
-```
-
->**Use Case C**: Check if a website's access rights/permissions are working
+>**Use Case B**: Check if a website's access rights/permissions are working
 ```javascript
 checkWebsiteStatus('https://www.example.com/secure_login_page', 1, 403);
 // returns true if request to url returns 403 (permission denied) status code
+```
+
+>**Use Case C**: Check if website is vulnerable to denial of service DoS attack
+```javascript
+checkWebsiteStatus('https://www.example.com/API', 200, 1000, false);
+// returns true if status code 200 is returned 100 times in a row
 ```
