@@ -68,7 +68,7 @@ checkWebsiteStatus('https://www.example.com');
 
 >**Use Case B**: Check if a website's access rights/permissions are working
 ```javascript
-checkWebsiteStatus('https://www.example.com/secure_login_page', 1, 403);
+checkWebsiteStatus('https://www.example.com/secure_login_page', 403);
 // returns true if request to url returns 403 (permission denied) status code
 ```
 
