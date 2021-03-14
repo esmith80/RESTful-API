@@ -21,10 +21,10 @@ Below is a table that shows the various combinations of parameters and expected 
     <tr>checkWebsiteAlive usage</tr>
     <tr>
       <td><strong>Parameter</td>
-      <td>Default Value</td>
-      <td>Type</td>
-      <td>Required/Optional</td>
-      <td>Usage</strong></td>
+      <td><strong>Default Value</strong></td>
+      <td><strong>Type</strong></td>
+      <td><strong>Required/Optional</strong></td>
+      <td><strong>Usage</strong></td>
     </tr>
   </theader>
   <tbody>
