@@ -1,3 +1,5 @@
+### ⚠️ _This README does not currently reflect the actual functionality of the code in this repo. It is currently being used as an example of writing style._
+
 # UpTimeAPI Guide
 The UpTimeAPI is a service that can monitor website metrics such as uptime.
 
