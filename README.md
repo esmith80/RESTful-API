@@ -75,5 +75,5 @@ checkWebsiteStatus('https://www.example.com/secure_login_page', 403);
 >**Use Case C**: Check if website is vulnerable to denial of service DoS attack
 ```javascript
 checkWebsiteStatus('https://www.example.com/API', 200, 1000, false);
-// returns true if status code 200 is returned 100 times in a row
+// returns true if status code 200 is returned 1000 times in a row
 ```
