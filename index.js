@@ -15,18 +15,18 @@ const helpers = require('./lib/helpers');
 
 // Instantiate the HTTP server
 const httpServer = http.createServer((req, res) => {
-  unifiedServer(req, res);    
+  unifiedServer(req, res);
 });
 
 // Start the server
 httpServer.listen(config.httpPort, () => {
-    console.log(`The server is listening on port ${config.httpPort}`);
+  console.log(`The server is listening on port ${config.httpPort}`);
 });
 
 // Instantiate the HTTPS server
 const httpsServerOptions = {
-  'key'  : fs.readFileSync('./https/key.pem'), 
-  'cert' : fs.readFileSync('./https/cert.pem')
+  'key': fs.readFileSync('./https/key.pem'),
+  'cert': fs.readFileSync('./https/cert.pem')
 };
 
 const httpsServer = https.createServer(httpsServerOptions, (req, res) => {
@@ -50,7 +50,7 @@ let unifiedServer = (req, res) => {
 
   // Get the path from that URL
   const path = parsedUrl.pathname;
-  const trimmedPath = path.replace(/^\/+|\/+$/g, ''); 
+  const trimmedPath = path.replace(/^\/+|\/+$/g, '');
   // the above regex is saying: 
   //    carat matching attempt starting at the beginning, 
   //    one slash (the escaped forward slash)
@@ -89,24 +89,24 @@ let unifiedServer = (req, res) => {
     buffer += decoder.end();
 
     // Choose the handler this request should go to. If one is not found, use the not found handler.
-    let chosenHandler = typeof(router[trimmedPath]) !== 'undefined' ? router[trimmedPath] : handlers.notFound;
-    
+    let chosenHandler = typeof (router[trimmedPath]) !== 'undefined' ? router[trimmedPath] : handlers.notFound;
+
     // Construct the data object to send to the handler
     let data = {
-      'trimmedPath' : trimmedPath,
-      'queryStringObject' : queryStringObject,
-      'method' : method,
-      'headers' : headers,
-      'payload' : helpers.parseJsonToObject(buffer)
+      'trimmedPath': trimmedPath,
+      'queryStringObject': queryStringObject,
+      'method': method,
+      'headers': headers,
+      'payload': helpers.parseJsonToObject(buffer)
     };
 
     // Route the request to the handler specified in the router
     chosenHandler(data, (statusCode, payload) => {
       // Use the status code called back by the handler, or default to 200
-      statusCode = typeof(statusCode) == 'number' ? statusCode : 200;
+      statusCode = typeof (statusCode) == 'number' ? statusCode : 200;
 
       // Use the payload called back by the handler or default to an empty object
-      payload = typeof(payload) == 'object' ? payload : {};
+      payload = typeof (payload) == 'object' ? payload : {};
 
       // Convert the payload to a string
       let payloadString = JSON.stringify(payload);
@@ -115,23 +115,23 @@ let unifiedServer = (req, res) => {
       res.setHeader("Content-Type", "application/json");
       res.writeHead(statusCode);
       res.end(payloadString);
-      
+
       // Log the response
       console.log('Returning this response: ', statusCode, payloadString);
 
     });
-    
+
     // Log the requst payload (buffer)
     console.log('Request received with this payload: ', buffer);
 
   });
-  
+
 };
 
 // Define a request router
 const router = {
-  'tokens' : handlers.tokens,
-  'hello' : handlers.hello,
-  'users' : handlers.users,
-  'checks' : handlers.checks
+  'tokens': handlers.tokens,
+  'hello': handlers.hello,
+  'users': handlers.users,
+  'checks': handlers.checks
 };
