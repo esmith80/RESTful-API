@@ -46,7 +46,7 @@ Below is a table that shows the various combinations of parameters and expected 
 
 <table>
   <theader>
-    <tr><td>checkWebsiteAlive usage</td></tr>
+    <tr>checkWebsiteAlive usage</tr>
     <tr>
       <td>Parameter</td>
       <td>Type</td>
