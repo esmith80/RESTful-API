@@ -40,7 +40,7 @@ Below is a table that shows the various combinations of parameters and expected 
       <td>1</td>
       <td>integer</td>
      <td>optional</td>
-     <td>If numberOfTries is set to a non-zero positive number, then the url will be tried that many times (returning `true` on the first successful attempt or `false` if the resource cannot be found after that number of tries. If the `numberOfTries` is set to `-1` the API will attempt to connect to the website repeatedly for 10 seconds until either a) it is found successfully, in which case it will return `true` or b) 10 seconds has passed with only failed attempts in which case it will retuurn `false`.</td>
+      <td>If <code>numberOfTries</coded> is set to a non-zero positive number, then the url will be tried that many times (returning <code>true</code> on the first successful attempt or <code>false</code> if the resource cannot be found after that number of tries. If <code>numberOfTries</code> is set to <code>-1</code> the API will attempt to connect to the website repeatedly for 10 seconds until either a) it is found successfully, in which case it will return <code>true</code> or b) 10 seconds has passed with only failed attempts in which case it will retuurn <code>false</code>.</td>
     </tr>
     <tr>
      <td>statusCode</td>
