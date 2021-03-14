@@ -16,11 +16,8 @@ checkWebsiteStatus(url, [statusCode], [numberOfTries], [finishAfterFirstMatch])
 
 `checkWebsiteStatus` sends a `GET` request to the specified `url` and returns a boolean based on a match with the provided `statusCode`.
 
-Below is a table that shows the various combinations of parameters and expected outcomes:
-
 <table>
   <theader>
-    <tr>checkWebsiteAlive usage</tr>
     <tr>
       <td><strong>Parameter</td>
       <td><strong>Default Value</strong></td>
